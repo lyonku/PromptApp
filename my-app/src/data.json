@@ -1,0 +1,22 @@
+[
+      {
+        "name": "general style",
+        "array": ["cyberpunk","neoclassicism","abstract Art","Baroque","3D renders & realism","unreal engine","octane render","bokeh","vray","houdini render","quixel megascans","depth of field (or dof)","arnold render","8k uhd","raytracing","cgi","lumen reflections","cgsociety","ultra realistic","volumetric fog","overglaze","macro photography","analog photo","polaroid","100mm","film photography","dslr","cinema4d","studio quality"]
+      },
+      {
+        "name": "2d art",
+        "array": ["digital art","digital painting","color page","featured on pixiv (for anime\/manga)","trending on dribbble (for vector graphics)","trending on artstation","precise lineart","tarot card","character design","concept art","symmetry","golden ratio","evocative","award winning","shiny","smooth","surreal","divine","celestial","elegant","oil painting","soft","fascinating","fine art"]
+      },
+          {
+        "name": "Окружающая среда",
+        "array": ["stunning environment","wide-angle","aerial view","massive scale","street level view","landscape","panoramic","lush vegetation","idyllic"]
+      },
+      {
+        "name": "Детали",
+        "array": ["wallpaper","poster","sharp focus","hyperrealism","insanely detailed","lush detail","filigree","intricate","crystalline","perfectionism","max detail","4k uhd","spirals","tendrils","ornate","HQ","angelic","decorations","embellishments","masterpiece","hard edge"]
+      },
+      {
+        "name": "Освещение",
+        "array": ["god rays","hard shadows","studio lighting","soft lighting","diffused lighting","rim lighting","volumetric lighting","specular lighting","cinematic lighting","luminescence","translucency","subsurface scattering","global illumination","indirect light","radiant light rays","bioluminescent details","ektachrome","glowing","shimmering light","halo","iridescent","magenta tint"]
+      }
+]
