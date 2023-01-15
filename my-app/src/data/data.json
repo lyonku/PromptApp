@@ -1,0 +1,95 @@
+[
+  {
+    "name": "Жанры",
+    "title": "genre",
+    "array": [
+      "Renaissance painting",
+      "Photo",
+      "Digital painting",
+      "pencil sketch",
+      "Poster",
+      "3d render",
+      "soviet poster",
+      "comics book art",
+      "anime art",
+      "tarot card",
+      "blueprint",
+      "concept art"
+    ]
+  },
+  {
+    "name": "Стили",
+    "title": "styles",
+    "array": [
+      "hyperrealism",
+      "neoclassicism",
+      "pop art",
+      "cartoon",
+      "impressionism",
+      "cubism",
+      "videogame cover art",
+      "baroque",
+      "realism",
+      "surrealism",
+      "old disney",
+      "pixar",
+      "arcane series"
+    ]
+  },
+  {
+    "name": "Сеттинги",
+    "title": "setting",
+    "array": [
+      "cyberpunk",
+      "medieval",
+      "fantasy",
+      "steampunk",
+      "roman",
+      "prehistoric",
+      "dieselpunk",
+      "post-apocalyptic",
+      "elven",
+      "asian",
+      "victorian",
+      "slavic",
+      "anceint egypt",
+      "sci-fi"
+    ]
+  },
+  {
+    "name": "Художники",
+    "title": "artist",
+    "array": [
+      "greg rutkowski",
+      "artgerm",
+      "da vinci",
+      "giger",
+      "picasso",
+      "rembrandt",
+      "warhol",
+      "shishkin",
+      "durer",
+      "moran",
+      "van gogh",
+      "mone"
+    ]
+  },
+  {
+    "name": "Теги",
+    "title": "tags",
+    "array": [
+      "detailed",
+      "8k",
+      "unreal engine",
+      "expressively loose brush strokes",
+      "artstaion",
+      "oil painting",
+      "dramatic lighting",
+      "raytracing",
+      "blender render",
+      "rays",
+      "divine",
+      "award winning"
+    ]
+  }
+]

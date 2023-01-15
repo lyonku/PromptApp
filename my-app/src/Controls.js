@@ -4,25 +4,22 @@ import { CssVarsProvider } from "@mui/joy/styles";
 import Button from "@mui/joy/Button";
 import Input from "@mui/joy/Input";
 import { useState, useEffect } from "react";
-function Controls({ selected, goGenerate, selectedTwo, genActive }) {
+function Controls({ selected, goGenerate }) {
   const [inputValue, setInputValue] = useState("");
   let open = false;
-  if (genActive) {
+  let error = "";
+  if (!selected.genre) {
+    error += "Выберете жанр. ";
+  }
+  if (selected.styles.length < 1 || selected.tags.length < 1) {
+    error += "Выберете как минимум один тэг и стиль";
+  }
+  if (
+    selected.genre &&
+    selected.styles.length >= 1 &&
+    selected.tags.length >= 1
+  ) {
     open = true;
-  } else {
-    open = false;
-  }
-
-  for (let i = 0; i < selected.length; i++) {
-    if (selected[i]?.length > 0 && inputValue.length >= 2) {
-      open = true;
-    }
-  }
-
-  for (let i = 0; i < selectedTwo.length; i++) {
-    if (selectedTwo[i]?.length > 0 && inputValue.length >= 2) {
-      open = true;
-    }
   }
 
   return (
@@ -49,11 +46,7 @@ function Controls({ selected, goGenerate, selectedTwo, genActive }) {
             Generate
           </Button>
         )}
-        {!open && (
-          <div className="Controls-error">
-            Выберите хотя бы один стиль, и впишите описание
-          </div>
-        )}
+        {!open && <div className="Controls-error">{error}</div>}
       </CssVarsProvider>
     </div>
   );

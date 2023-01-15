@@ -98,6 +98,11 @@
   animation: mltShdSpin 1.7s infinite ease, round 1.7s infinite ease;
 }
 
+.title {
+  font-size: 18pt !important;
+  margin-top: 10px !important;
+}
+
 .BoxesTwo-img {
   width: 200px;
   height: 200px;
@@ -198,6 +203,7 @@
   }
 
   .Controls-error {
+    width: 300px;
     text-align: center;
   }
 
