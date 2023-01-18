@@ -21,11 +21,8 @@ function App() {
   const [open, setOpen] = useState(false);
   const [modelValue, setModelValue] = useState("vintedois-diffusion");
   const [fullImgName, setFullImgName] = useState("");
-  const [openFullImgName, setOpenFullImgName] = useState(false);
-  const [src, setSrc] = useState([]);
-  const [seed, setSeed] = useState();
-  const url = "https://eo6n4spi6rkan06.m.pipedream.net";
-  const [checked, setChecked] = useState(false);
+  const [src, setSrc] = useState("");
+  const url = "https://stablediffusionapi.com/api/v3/dreambooth";
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
@@ -34,18 +31,18 @@ function App() {
   };
 
   async function postData(url = "", data = {}) {
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      return await response.json();
-    } catch {
-      setOpen(false);
-    }
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers":
+          "Origin, X-Requested-With, Content-Type, Accept",
+      },
+      body: JSON.stringify(data),
+    });
+    console.log(response);
+    return await response.json();
   }
 
   async function goGenerate(value) {
@@ -69,8 +66,7 @@ function App() {
 
     for (const key in selected) {
       if (key == "genre") {
-        totalTextPos =
-          "(" + selected.genre + ")" + " of " + "((" + value + "))";
+        totalTextPos = "(" + selected.genre + ")" + " of " + value;
       } else {
         if (selected[key].length >= 1) {
           totalTextPos += ", " + selected[key].join(", ");
@@ -118,33 +114,28 @@ function App() {
     data.prompt = uniqueArrayPos.join(", ");
     data.negative_prompt = uniqueArrayNeg.join(", ");
 
-    if (checked) {
-      let copy = Object.assign([], src);
-
-      let values = ["anything-v3", "protogen-3.4", "vintedois-diffusion"];
-      for (let i = 0; i < values.length; i++) {
-        data.model_id = values[i];
-
-        postData(url, data).then((data) => {
-          copy.push(data.output[0]);
-          if (copy.length == 3) {
-            setSrc(copy);
-          }
-        });
+    postData(url, data).then((data) => {
+      console.log(data);
+      if (data.status == "success") {
+        setSrc(data.output[0]);
       }
-    } else {
-      postData(url, data).then((data) => {
-        console.log(data);
-        setSeed(data.meta.seed);
-        setSrc(data.output);
-      });
-    }
+      if (data.status == "processing") {
+        setTimeout(() => {
+          postData(data.fetch_result, {
+            key: "J5e6ryPxKnOCHdITBr7M5hnvSX6nYpHvbFTSiO4i9yThzB3pBTRfeF9Zk6CG",
+          }).then((data) => {
+            setSrc(data.output[0]);
+          });
+        }, 30000);
+      }
+    });
 
     setFullImgName(
       "PROMPT: " + data.prompt + " NEGATIVE_PROMPT: " + data.negative_prompt
     );
     handleOpen();
   }
+
   return (
     <div className="App">
       <Controls
@@ -153,8 +144,6 @@ function App() {
         genActive={genActive}
         setModelValue={setModelValue}
         modelValue={modelValue}
-        setChecked={setChecked}
-        checked={checked}
       />
       <Box sx={{ width: "90%" }}>
         <Boxes selected={selected} setSelected={setSelected} />
@@ -180,32 +169,13 @@ function App() {
               }
             }}
           >
-            <div className="main-image-wrap">
-              {src.length >= 1 ? (
-                src.map((src, index) => {
-                  return <img src={src} key={index} className="image" />;
-                })
-              ) : (
-                <div className="loader-wrap">
-                  <span className="loader"></span>
-                </div>
-              )}
-            </div>
-
-            {src.length >= 1 && (
-              <div
-                onClick={() => setOpenFullImgName(!openFullImgName)}
-                className="showPrompt"
-              >
-                {!openFullImgName ? "Показать запрос" : "Скрыть запрос"}
+            {src && <div className="imgName">{fullImgName}</div>}
+            {src ? (
+              <img src={src} className="image" />
+            ) : (
+              <div className="loader-wrap">
+                <span className="loader"></span>
               </div>
-            )}
-
-            {src && openFullImgName && (
-              <>
-                <div className="imgName">{fullImgName}</div>
-                <div className="imgName">{seed}</div>
-              </>
             )}
           </div>
         </>

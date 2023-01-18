@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 70%;
+  width: 60%;
   align-items: center;
   margin: 0 auto;
   margin-top: 20px;
@@ -26,7 +26,7 @@
 }
 
 .Controls {
-  width: 500px;
+  width: 600px;
   height: 100%;
   margin-left: 10px;
   margin-right: 10px;
@@ -43,15 +43,12 @@
 }
 
 .main-image {
-  box-sizing: border-box;
-
-  overflow: auto;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: -40px;
+  margin-top: -50px;
 }
 
 .btn {
@@ -60,35 +57,11 @@
   top: 10px;
 }
 
-.showPrompt {
-  background-color: #000000;
-  padding: 5px 10px;
-  border-radius: 20px;
-  margin: 20px 0;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 14pt;
-}
-
-.main-image-wrap {
-  /* height: 100%; */
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 5px;
-  justify-content: center;
-  align-items: center;
-  margin: 0 10px;
-}
-
 .image {
-  /* margin-top: 100px; */
   width: 95%;
-  max-width: 512px;
-  max-height: 512px;
+  max-width: 1024px;
+  max-height: 1024px;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -100,7 +73,7 @@
   justify-content: center;
   height: 100%;
   width: 100%;
-  /* background-color: rgba(127, 127, 127, 0.424); */
+  background-color: rgba(127, 127, 127, 0.424);
 }
 
 .imgName {
@@ -218,17 +191,6 @@
   }
 }
 
-@media screen and (max-height: 1120px) and (max-width: 1565px) {
-  .main-image {
-    flex-wrap: nowrap;
-    padding-top: 20px;
-    justify-content: flex-start;
-  }
-
-  .image {
-  }
-}
-
 @media screen and (max-width: 1100px) {
   /* .image {
     width: 340px;
@@ -237,10 +199,6 @@
 
   .App {
     width: auto;
-  }
-
-  .main-image {
-    justify-content: flex-start;
   }
 
   .Controls {

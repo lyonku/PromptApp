@@ -8,17 +8,8 @@ import FormControl from "@mui/joy/FormControl";
 import FormLabel from "@mui/joy/FormLabel";
 import Radio from "@mui/joy/Radio";
 import RadioGroup from "@mui/joy/RadioGroup";
-import Switch from "@mui/joy/Switch";
-import Typography from "@mui/joy/Typography";
 
-function Controls({
-  selected,
-  goGenerate,
-  modelValue,
-  setModelValue,
-  checked,
-  setChecked,
-}) {
+function Controls({ selected, goGenerate, modelValue, setModelValue }) {
   const [inputValue, setInputValue] = useState("");
 
   const handleChange = (event) => {
@@ -26,15 +17,14 @@ function Controls({
   };
   let open = false;
   let error = "";
-
   if (inputValue.length < 2) {
-    error += "Впишите запрос на латинице. ";
+    error += "Впишите запрос. ";
   }
   if (!selected.genre) {
     error += "Выберете жанр. ";
   }
   if (selected.styles.length < 1) {
-    error += "Выберете, как минимум, один стиль";
+    error += "Выберете как минимум один стиль";
   }
   if (selected.genre && selected.styles.length >= 1 && inputValue.length >= 2) {
     open = true;
@@ -44,10 +34,9 @@ function Controls({
     <div className="Controls">
       <CssVarsProvider>
         <Input
-          placeholder="Describe the art you want to generate"
+          placeholder="Опишите арт, которы хотите создать"
           sx={{ width: "300px" }}
           value={inputValue}
-          pattern="[A-Za-z]"
           onChange={(e) => {
             setInputValue(e.target.value);
           }}
@@ -65,35 +54,20 @@ function Controls({
             Generate
           </Button>
         )}
-        {!checked && (
-          <FormControl>
-            <RadioGroup
-              defaultValue="female"
-              name="controlled-radio-buttons-group"
-              value={modelValue}
-              onChange={handleChange}
-              sx={{ my: 1 }}
-              row
-            >
-              <Radio value="protogen-3.4" label="protogen-3.4" />
-              <Radio value="anything-v3" label="anything-v3" />
-              <Radio value="vintedois-diffusion" label="vintedois-diffusion" />
-            </RadioGroup>
-          </FormControl>
-        )}
-
-        <Typography
-          component="label"
-          endDecorator={
-            <Switch
-              checked={checked}
-              onChange={(event) => setChecked(event.target.checked)}
-            />
-          }
-        >
-          Включить рендер 3 изображений -
-        </Typography>
-
+        <FormControl>
+          <RadioGroup
+            defaultValue="female"
+            name="controlled-radio-buttons-group"
+            value={modelValue}
+            onChange={handleChange}
+            sx={{ my: 1 }}
+            row
+          >
+            <Radio value="anything-v3" label="anything-v3" />
+            <Radio value="protogen-3.4" label="protogen-3.4" />
+            <Radio value="vintedois-diffusion" label="vintedois-diffusion" />
+          </RadioGroup>
+        </FormControl>
         {!open && <div className="Controls-error">{error}</div>}
       </CssVarsProvider>
     </div>
