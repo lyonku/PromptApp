@@ -12,7 +12,7 @@
       {
         "sub_name": "Digital painting",
         "positivePrompt": "trending on pinterest, 8k, ultra hd, highly detailed, trending on artstation, loose brush strokes",
-        "negativePrompt": "3d render, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
+        "negativePrompt": "  render, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_154244_966421-Digital+painting+of+small+villa+trending+on+pinterest-1012436400.png"
       },
       {
@@ -41,7 +41,7 @@
       },
       {
         "sub_name": "comics book art",
-        "positivePrompt": "trending on pinterest, 8k, ultra hd, highly detailed, trending on pinterest, cel shading, old comics colors",
+        "positivePrompt": "trending on pinterest, 8k, ultra hd, highly detailed, trending on pinterest, cel shading, old comics colors, 2d art, stylized",
         "negativePrompt": "3d render, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_175615_200753-comics+book+art+of+small+villa+trending+on-1012436400.png"
       },
@@ -73,77 +73,77 @@
   },
   {
     "name": "Стили",
-    "title": "styles",
+    "title": "style",
     "array": [
       {
         "sub_name": "hyperrealism",
-        "positivePrompt": "hyperrealism, unreal engine, 8k, trending on pinterest, ultra hd, great linework",
+        "positivePrompt": "unreal engine, 8k, trending on pinterest, ultra hd, great linework",
         "negativePrompt": "2d art, stylized, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_181251_769262-Picture+of+small+villa+hyperrealism+unreal+engine+8k-1012436400.png"
       },
       {
         "sub_name": "neoclassicism",
-        "positivePrompt": "neoclassicism style, classic masterpiece, 8k, trending on pinterest, ultra hd, smooth colors",
+        "positivePrompt": "classic masterpiece, 8k, trending on pinterest, ultra hd, smooth colors",
         "negativePrompt": "3d render, stylized, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_181824_807589-Picture+of+small+villa+neoclassicism+style+classic+masterpiece-1012436400.png"
       },
       {
         "sub_name": "pop art",
-        "positivePrompt": "pop art style, trending on pinterest, cel shading, great linework, bright colors, flat colors, vector graphics",
+        "positivePrompt": "trending on pinterest, cel shading, great linework, bright colors, flat colors, vector graphics",
         "negativePrompt": "3d render, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_182329_853988-picture+of+small+villa+pop+art+style+trending-1012436400.png"
       },
       {
         "sub_name": "cartoon",
-        "positivePrompt": "cartoon style, trending on pinterest, cel shading, great linework, bright colors, flat colors",
+        "positivePrompt": "trending on pinterest, cel shading, great linework, bright colors, flat colors",
         "negativePrompt": "3d render, stylized, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_182441_394814-picture+of+small+villa+cartoon+style+trending+on-1012436400.png"
       },
       {
         "sub_name": "impressionism",
-        "positivePrompt": "impressionism style, trending on pinterest, trending on artstation, expressively loose brush strokes, artstaion, oil painting, dramatic lighting, raytracing, bright colors",
+        "positivePrompt": "trending on pinterest, trending on artstation, expressively loose brush strokes, artstaion, oil painting, dramatic lighting, raytracing, bright colors",
         "negativePrompt": "3d render, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_183359_860331-picture+of+small+villa+impressionism+style+trending+on-1012436400.png"
       },
       {
         "sub_name": "cubism",
-        "positivePrompt": "cubism style, trending on pinterest, trending on artstation, bright colors",
+        "positivePrompt": "trending on pinterest, trending on artstation, bright colors",
         "negativePrompt": "3d render, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_183648_000087-picture+of+small+villa+cubism+style+trending+on-1012436400.png"
       },
       {
         "sub_name": "videogame cover art",
-        "positivePrompt": "videogame cover art style, trending on pinterest, trending on artstation, expressively loose brush strokes, artstaion, oil painting, dramatic lighting, raytracing, bright colors",
+        "positivePrompt": "trending on pinterest, trending on artstation, expressively loose brush strokes, artstaion, oil painting, dramatic lighting, raytracing, bright colors",
         "negativePrompt": "3d render, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_183937_897738-picture+of+small+villa+videogame+cover+art+style-1012436400.png"
       },
       {
         "sub_name": "baroque",
-        "positivePrompt": "neoclassicism style, classic masterpiece, 8k, trending on pinterest, ultra hd, smooth colors",
+        "positivePrompt": "classic masterpiece, 8k, trending on pinterest, ultra hd, smooth colors",
         "negativePrompt": "3d render, stylized, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_184058_730158-picture+of+small+villa+baroque+art+style+trending-1012436400.png"
       },
       {
         "sub_name": "surrealism",
-        "positivePrompt": "surrealism art style, trending on pinterest, trending on artstation, masterpiece, 8k, trending on pinterest, ultra hd, smooth colors",
+        "positivePrompt": "trending on pinterest, trending on artstation, masterpiece, 8k, trending on pinterest, ultra hd, smooth colors",
         "negativePrompt": "3d render, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_184359_124810-picture+of+small+villa+surrealism+art+style+trending-1012436400.png"
       },
       {
         "sub_name": "old disney",
-        "positivePrompt": "neoclassicism style, classic masterpiece, 8k, trending on pinterest, ultra hd, smooth colors",
+        "positivePrompt": "classic masterpiece, 8k, trending on pinterest, ultra hd, smooth colors",
         "negativePrompt": "3d render, stylized, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_184811_606684-picture+of+small+villa+old+disney+art+style-1012436400.png"
       },
       {
         "sub_name": "pixar",
-        "positivePrompt": "pixar style, trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, great linework, modern animation",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, great linework, modern animation",
         "negativePrompt": "(((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_190053_739337-picture+of+small+villa+pixar+style+trending+on-1012436400.png"
       },
       {
         "sub_name": "warcraft",
-        "positivePrompt": "warcraft style, trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, video game render ",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, video game render ",
         "negativePrompt": "(((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_190448_518804-picture+of+small+villa+warcraft+style+trending+on-1012436400.png"
       }
@@ -155,79 +155,79 @@
     "array": [
       {
         "sub_name": "cyberpunk",
-        "positivePrompt": "cyberpunk setting, trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, cyberpunk 2020, cyberpunk 2077, dark tone, neon lights in darkness, bright neon colors",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, cyberpunk 2020, cyberpunk 2077, dark tone, neon lights in darkness, bright neon colors",
         "negativePrompt": "(((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_190836_211583-picture+of+small+villa+cyberpunk+setting+trending+on-1012436400.png"
       },
       {
         "sub_name": "medieval",
-        "positivePrompt": "medieval setting, trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed",
         "negativePrompt": "(((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_191601_263919-picture+of+small+villa+medieval+setting+trending+on-1012436400.png"
       },
       {
         "sub_name": "fantasy",
-        "positivePrompt": "fantasy setting, trending on artstation, masterpiece, 8k, ultra hd,trending on pinterest, raytracing, highly detailed, high fantasy aesthetic",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, high fantasy aesthetic",
         "negativePrompt": "(((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_191746_424118-picture+of+small+villa+fantasy+setting+trending+on-1012436400.png"
       },
       {
         "sub_name": "steampunk",
-        "positivePrompt": "steampunk setting, trending on artstation, masterpiece, 8k, ultra hd,trending on pinterest, raytracing, highly detailed, dark foggy aesthetic",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, dark foggy aesthetic",
         "negativePrompt": "(((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_191939_944808-picture+of+small+villa+steampunk+setting+trending+on-1012436400.png"
       },
       {
         "sub_name": "roman",
-        "positivePrompt": "roman setting, trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, high aesthetic",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, high aesthetic",
         "negativePrompt": "(((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_192050_335691-picture+of+small+villa+roman+setting+trending+on-1012436400.png"
       },
       {
         "sub_name": "prehistoric",
-        "positivePrompt": "prehistoric setting, trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, primitive aesthetic",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, primitive aesthetic",
         "negativePrompt": "civilization, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_192315_014752-picture+of+small+villa+prehistoric+setting+trending+on-1012436400.png"
       },
       {
         "sub_name": "dieselpunk",
-        "positivePrompt": "dieselpunk setting, trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, grim aesthetic, tubes and black smoke",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, grim aesthetic, tubes and black smoke",
         "negativePrompt": "light, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_192507_463574-picture+of+small+villa+dieselpunk+setting+trending+on-1012436400.png"
       },
       {
         "sub_name": "post-apocalyptic",
-        "positivePrompt": "post-apocalyptic setting, trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, grim and ruined aesthetic",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, grim and ruined aesthetic",
         "negativePrompt": "light, (((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_192931_861073-picture+of+small+villa+post+apocalyptic+setting+trending-1012436400.png"
       },
       {
         "sub_name": "elven",
-        "positivePrompt": "elven setting, trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, high fantasy aesthetic, magic and runes",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, high fantasy aesthetic, magic and runes",
         "negativePrompt": "(((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_193559_274753-picture+of+small+villa+elven+setting+trending+on-1012436400.png"
       },
       {
         "sub_name": "asian",
-        "positivePrompt": "asian setting, trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, high fantasy aesthetic",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, high fantasy aesthetic",
         "negativePrompt": "(((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_195617_160881-picture+of+small+villa+asian+setting+trending+on-1012436400.png"
       },
       {
         "sub_name": "slavic",
-        "positivePrompt": "slavic setting, trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, light and warm aesthetic",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, light and warm aesthetic",
         "negativePrompt": "(((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_195936_498585-picture+of+small+villa+slavic+setting+trending+on-1012436400.png"
       },
       {
         "sub_name": "ancient egypt",
-        "positivePrompt": "anceint egypt setting, trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed,light and sunny aesthetic, soft colors, teal accents",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed,light and sunny aesthetic, soft colors, teal accents",
         "negativePrompt": "(((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_200113_405369-picture+of+small+villa+anceint+egypt+setting+trending-1012436400.png"
       },
       {
         "sub_name": "sci-fi",
-        "positivePrompt": "sci-fi setting, trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, halogen lights and metal, sharp colors, smooth shapes, high contrast",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, halogen lights and metal, sharp colors, smooth shapes, high contrast",
         "negativePrompt": "(((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230114_200509_605016-picture+of+small+villa+sci+fi+setting+trending-1012436400.png"
       }
@@ -245,7 +245,7 @@
       },
       {
         "sub_name": "artgerm",
-        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest, raytracing, highly detailed, oil painting, dark fantasy, ((by greg rutksowski))",
+        "positivePrompt": "trending on artstation, masterpiece, 8k, ultra hd, trending on pinterest,  raytracing, fit, stylized, highly detailed, oil painting, dark fantasy, ((by artgerm))",
         "negativePrompt": "(((lowres))), ((jpeg artifacts))), worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
         "url": "https://ktr-images.s3.eu-central-1.amazonaws.com/nft-generations/20230115_121800_449908-picture+of+small+villa+trending+on+artstation+masterpiece-1012436400.png"
       },

@@ -26,7 +26,7 @@
 }
 
 .Controls {
-  width: 500px;
+  max-width: 600px;
   height: 100%;
   margin-left: 10px;
   margin-right: 10px;
@@ -42,6 +42,17 @@
   align-items: flex-start;
 }
 
+.Error-text {
+  display: flex;
+  gap: 10px;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 100px;
+  font-weight: 800;
+  font-size: 18pt;
+}
+
 .main-image {
   box-sizing: border-box;
 
@@ -52,6 +63,11 @@
   justify-content: center;
   align-items: center;
   margin-top: -40px;
+}
+
+.Controls-input {
+  width: 100%;
+  max-width: 400px;
 }
 
 .btn {
@@ -139,6 +155,21 @@
   margin-right: -1px;
 }
 
+.app-wrap {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.JoyChip-colorPrimary {
+  background-color: #a4d8fd !important;
+}
+
+.JoyChip-colorPrimary:hover {
+  background-color: #9cd5fd !important;
+}
+
 .Chip-two {
   display: flex !important;
   align-items: center !important;
@@ -152,9 +183,11 @@
 }
 
 .Chip-two span {
+  max-width: 100%;
   display: flex !important;
   align-items: center !important;
   flex-direction: column !important;
+  flex-wrap: wrap;
 }
 
 .Controls-error {
@@ -228,6 +261,19 @@
   .image {
   }
 }
+@media screen and (max-width: 1920px) {
+  .BoxesTwo-img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .BoxesTwo-img {
+    width: 130px;
+    height: 130px;
+  }
+}
 
 @media screen and (max-width: 1100px) {
   /* .image {
@@ -278,8 +324,8 @@
   }
 
   .BoxesTwo-img {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
   }
 
   .Typography-zag {
@@ -301,7 +347,7 @@
     height: 100px !important;
   }
 
-  .Radiogrup {
+  .RadioGrup {
     justify-content: center;
   }
 }

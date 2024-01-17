@@ -9,11 +9,13 @@ import Modal from "@mui/material/Modal";
 import bigData from "./data/data.json";
 import IconButton from "@mui/material/IconButton";
 import ClearIcon from "@mui/icons-material/Clear";
+import ErrorIcon from "@mui/icons-material/Error";
+import { Button } from "@mui/joy";
 
 function App() {
   const [selected, setSelected] = useState({
     genre: "",
-    styles: [],
+    style: [],
     setting: [],
     artist: [],
   });
@@ -26,6 +28,9 @@ function App() {
   const [seed, setSeed] = useState();
   const url = "https://eo6n4spi6rkan06.m.pipedream.net";
   const [checked, setChecked] = useState(false);
+  const [error, setError] = useState(false);
+
+  const [lastSrc, setLastSrc] = useState([]);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
@@ -44,11 +49,12 @@ function App() {
       });
       return await response.json();
     } catch {
-      setOpen(false);
+      setError(true);
     }
   }
 
   async function goGenerate(value) {
+    setError(false);
     let totalTextPos = "";
     let totalTextNeg = "";
     let data = {
@@ -72,8 +78,12 @@ function App() {
         totalTextPos =
           "(" + selected.genre + ")" + " of " + "((" + value + "))";
       } else {
-        if (selected[key].length >= 1) {
-          totalTextPos += ", " + selected[key].join(", ");
+        if (selected[key].length >= 1 && key != "artist") {
+          for (let i = 0; i < selected[key].length; i++) {
+            if (selected[key][i]) {
+              totalTextPos += ", " + selected[key][i] + " " + key;
+            }
+          }
         }
       }
     }
@@ -106,17 +116,36 @@ function App() {
       }
     }
 
+    if (modelValue == "anything-v3") {
+      totalTextPos = "((masterpiece)), ((best quality)), " + totalTextPos;
+      totalTextNeg +=
+        "nsfw, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name";
+    }
+
     let totalTextPosMas = totalTextPos.split(", ");
     let totalTextNegMas = totalTextNeg.split(", ");
-    let uniqueArrayNeg = totalTextNegMas.filter(function (item, pos) {
-      return totalTextNegMas.indexOf(item) == pos;
-    });
     let uniqueArrayPos = totalTextPosMas.filter(function (item, pos) {
       return totalTextPosMas.indexOf(item) == pos;
     });
+    let uniqueArrayNeg = totalTextNegMas.filter(function (item, pos) {
+      return totalTextNegMas.indexOf(item) == pos;
+    });
+
+    let uniqueArrayNeg2 = uniqueArrayNeg.reduce((acc, item) => {
+      if (!uniqueArrayPos.includes(item)) {
+        if (
+          uniqueArrayPos[0].indexOf(item) != -1 ||
+          uniqueArrayPos[2].indexOf(item) != -1
+        ) {
+        } else {
+          acc.push(item);
+        }
+      }
+      return acc;
+    }, []);
 
     data.prompt = uniqueArrayPos.join(", ");
-    data.negative_prompt = uniqueArrayNeg.join(", ");
+    data.negative_prompt = uniqueArrayNeg2.join(", ");
 
     if (checked) {
       let copy = Object.assign([], src);
@@ -125,18 +154,32 @@ function App() {
       for (let i = 0; i < values.length; i++) {
         data.model_id = values[i];
 
-        postData(url, data).then((data) => {
-          copy.push(data.output[0]);
+        postData(url, data).then((data2) => {
+          console.log(data2);
+          copy.push(data2.output[0]);
+          if (data.status == "failed") {
+            setError(true);
+          }
           if (copy.length == 3) {
             setSrc(copy);
+            setLastSrc(copy);
           }
         });
       }
     } else {
       postData(url, data).then((data) => {
-        console.log(data);
-        setSeed(data.meta.seed);
-        setSrc(data.output);
+        if (data.status == "failed") {
+          setError(true);
+        }
+        if (!data.meta) {
+          setSeed(data?.firstResponse?.meta?.seed);
+          setSrc(data.output?.slice(0, 1));
+          setLastSrc(data.output?.slice(0, 1));
+        } else {
+          setSeed(data?.meta?.seed);
+          setSrc(data.output);
+          setLastSrc(data.output);
+        }
       });
     }
 
@@ -147,15 +190,33 @@ function App() {
   }
   return (
     <div className="App">
-      <Controls
-        selected={selected}
-        goGenerate={goGenerate}
-        genActive={genActive}
-        setModelValue={setModelValue}
-        modelValue={modelValue}
-        setChecked={setChecked}
-        checked={checked}
-      />
+      <div className="app-wrap">
+        <Controls
+          selected={selected}
+          goGenerate={goGenerate}
+          genActive={genActive}
+          setModelValue={setModelValue}
+          modelValue={modelValue}
+          setChecked={setChecked}
+          checked={checked}
+        />
+        <CssVarsProvider>
+          {lastSrc.length >= 1 ? (
+            <Button
+              type="button"
+              onClick={() => {
+                handleOpen();
+                setSrc(lastSrc);
+              }}
+            >
+              Показать последний запрос
+            </Button>
+          ) : (
+            ""
+          )}
+        </CssVarsProvider>
+      </div>
+
       <Box sx={{ width: "90%" }}>
         <Boxes selected={selected} setSelected={setSelected} />
       </Box>
@@ -170,7 +231,6 @@ function App() {
           <IconButton aria-label="delete" className="btn" onClick={handleClose}>
             <ClearIcon />
           </IconButton>
-
           <div
             className="main-image"
             id="main-image"
@@ -185,6 +245,11 @@ function App() {
                 src.map((src, index) => {
                   return <img src={src} key={index} className="image" />;
                 })
+              ) : error ? (
+                <div className="Error-text">
+                  <ErrorIcon fontSize="large" />
+                  Ошибка, попробуйте снова
+                </div>
               ) : (
                 <div className="loader-wrap">
                   <span className="loader"></span>

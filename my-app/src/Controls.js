@@ -10,6 +10,7 @@ import Radio from "@mui/joy/Radio";
 import RadioGroup from "@mui/joy/RadioGroup";
 import Switch from "@mui/joy/Switch";
 import Typography from "@mui/joy/Typography";
+import ClearIcon from "@mui/icons-material/Clear";
 
 function Controls({
   selected,
@@ -20,39 +21,73 @@ function Controls({
   setChecked,
 }) {
   const [inputValue, setInputValue] = useState("");
+  const [currentParam, setCurrentParam] = useState("");
 
   const handleChange = (event) => {
     setModelValue(event.target.value);
   };
   let open = false;
   let error = "";
-
   if (inputValue.length < 2) {
     error += "Впишите запрос на латинице. ";
   }
   if (!selected.genre) {
-    error += "Выберете жанр. ";
+    error += "Выберете 1 жанр. ";
   }
-  if (selected.styles.length < 1) {
+  if (selected.style.length < 1) {
     error += "Выберете, как минимум, один стиль";
   }
-  if (selected.genre && selected.styles.length >= 1 && inputValue.length >= 2) {
+  if (selected.genre && selected.style.length >= 1 && inputValue.length >= 2) {
     open = true;
   }
+
+  useEffect(() => {
+    const name = {
+      style: ["Стили: ", "Стиль: "],
+      setting: ["Сеттинги: ", "Сеттинг: "],
+      artist: ["Художники: ", "Художник: "],
+    };
+    let val = "";
+
+    for (const key in selected) {
+      if (key == "genre") {
+        val = "Жанр: " + selected[key] + "; ";
+      } else {
+        const newMass = [];
+        selected[key].map((item) => {
+          if (item != "") {
+            newMass.push(item);
+          }
+        });
+        selected[key].length &&
+          (val +=
+            (selected[key].length > 1 ? name[key][0] : name[key][1]) +
+            newMass.join(", ") +
+            "; ");
+      }
+    }
+    setCurrentParam(val);
+  }, [selected]);
 
   return (
     <div className="Controls">
       <CssVarsProvider>
         <Input
           placeholder="Describe the art you want to generate"
-          sx={{ width: "300px" }}
           value={inputValue}
           pattern="[A-Za-z]"
           onChange={(e) => {
             setInputValue(e.target.value);
           }}
+          onKeyDown={(e) => e.keyCode == 13 && goGenerate(inputValue)}
+          className="Controls-input"
+          endDecorator={
+            <ClearIcon
+              sx={{ cursor: "pointer" }}
+              onClick={() => setInputValue("")}
+            />
+          }
         />
-
         {open ? (
           <Button
             className="ControlsBtn"
@@ -94,7 +129,11 @@ function Controls({
           Включить рендер 3 изображений -
         </Typography>
 
-        {!open && <div className="Controls-error">{error}</div>}
+        {!open ? (
+          <div className="Controls-error">{error}</div>
+        ) : (
+          <div>{currentParam}</div>
+        )}
       </CssVarsProvider>
     </div>
   );

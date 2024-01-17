@@ -26,7 +26,8 @@ function Boxes({ selected, setSelected }) {
           name={mainItem.name}
           aria-labelledby={mainItem.name}
           row
-          sx={{ flexWrap: "wrap", gap: 1 }}
+          sx={{ flexWrap: "wrap", gap: 1, justifyContent: "space-between" }}
+          className="RadioGrup"
         >
           {mainItem.array.map((item) => {
             let checked = false;
